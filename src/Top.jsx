@@ -1,5 +1,9 @@
-import React from "react";
-import { ReactComponent as Logo } from './assets/logo.svg';
+import Logo from "./assets/logo.svg?react";
+import Facebook from "./assets/icon-facebook.svg?react";
+import Twitter from "./assets/icon-twitter.svg?react";
+import Pinterest from "./assets/icon-pinterest.svg?react";
+import Instagram from "./assets/icon-instagram.svg?react";
+import UrlShortener from "./UrlShortener.jsx";
 
 function Top() {
   return (
@@ -39,6 +43,7 @@ function Top() {
         <div className="content__right"></div>
       </div>
       <div className="top__middle">
+      <UrlShortener />
         <div className="middle__intro">
           <h2 className="intro__title">Advanced Statistics</h2>
 
@@ -50,7 +55,11 @@ function Top() {
         <div className="middle__cards">
           <div className="cards__card card1">
             <div className="card__pic">
-              <img src="../public/icon-brand-recognition.svg" alt="brand" className="pic__icon" />
+              <img
+                src="../public/icon-brand-recognition.svg"
+                alt="brand"
+                className="pic__icon"
+              />
             </div>
             <h3 className="card__title">Brand Recognition</h3>
             <p>
@@ -61,7 +70,11 @@ function Top() {
           </div>
           <div className="cards__card card2">
             <div className="card__pic">
-              <img src="../public/icon-detailed-records.svg" alt="records" className="pic__icon" />
+              <img
+                src="../public/icon-detailed-records.svg"
+                alt="records"
+                className="pic__icon"
+              />
             </div>
             <h3 className="card__title">Detailed Records</h3>
             <p>
@@ -72,7 +85,11 @@ function Top() {
           </div>
           <div className="cards__card card3">
             <div className="card__pic">
-              <img src="../public/icon-fully-customizable.svg" alt="customizable" className="pic__icon" />
+              <img
+                src="../public/icon-fully-customizable.svg"
+                alt="customizable"
+                className="pic__icon"
+              />
             </div>
             <h3 className="card__title">Fully Customizable</h3>
             <p>
@@ -83,32 +100,39 @@ function Top() {
         </div>
       </div>
       <div className="top__bottom">
-      <h2 className="bottom__title">Boost your links today</h2> <button className="bottom__button">Get Started</button>
+        <h2 className="bottom__title">Boost your links today</h2>
+        <button className="bottom__button">Get Started</button>
       </div>
       <div className="top__footer">
-        <Logo />
-        <div>
-      <h4>Features</h4>
+        <Logo fill="white" className="footer__logo" />
+        <div className="footer__column">
+          <h4 className="column__title">Features</h4>
 
-      <h5>Link Shortening</h5>
-      <h5>Branded Links</h5>
-      <h5>Analytics</h5>
-      </div>
-      <div>
-      <h4>Resources</h4>
+          <h5 className="column__option">Link Shortening</h5>
+          <h5 className="column__option">Branded Links</h5>
+          <h5 className="column__option">Analytics</h5>
+        </div>
+        <div className="footer__column">
+          <h4 className="column__title">Resources</h4>
 
-      <h5>Blog</h5>
-      <h5>Developers</h5>
-      <h5>Support</h5>
-      </div>
-      <div>
-      <h4>Company</h4>
+          <h5 className="column__option">Blog</h5>
+          <h5 className="column__option">Developers</h5>
+          <h5 className="column__option">Support</h5>
+        </div>
+        <div className="footer__column">
+          <h4 className="column__title">Company</h4>
 
-      <h5>About</h5>
-      <h5>Our Team</h5>
-      <h5>Careers</h5>
-      <h5>Contact</h5>
-      </div>
+          <h5 className="column__option">About</h5>
+          <h5 className="column__option">Our Team</h5>
+          <h5 className="column__option">Careers</h5>
+          <h5 className="column__option">Contact</h5>
+        </div>
+        <div className="column__social">
+          <Facebook />
+          <Twitter />
+          <Pinterest />
+          <Instagram />
+        </div>
       </div>
     </main>
   );

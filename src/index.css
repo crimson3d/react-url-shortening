@@ -94,7 +94,8 @@ button:focus-visible {
   justify-content: flex-end;
   gap: 3rem;
   margin-left: 9.3rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 7rem;
+  
 }
 
 .nav__left,
@@ -154,6 +155,7 @@ button:focus-visible {
   align-items: center;
   gap: 7rem;
   min-height: 900px;
+  position: relative;
 }
 
 .middle__intro {
@@ -163,6 +165,10 @@ button:focus-visible {
   text-align: center;
   gap: 1rem;
   margin-top: 6rem;
+}
+
+.intro__title {
+  font-size: 2.2rem;
 }
 
 .intro__text {
@@ -180,7 +186,7 @@ button:focus-visible {
 .cards__card {
   background-color: white;
   border-radius: 8px;
-  padding: 25px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -205,15 +211,11 @@ button:focus-visible {
 
 .card__pic {
   position: absolute;
-  top: -30px;
+  top: -40px;
   background-color: hsl(260, 8%, 14%);
   border-radius: 100%;
-  padding: 1rem;
+  padding: 1.2rem;
   display: flex;
-}
-
-.pic__icon {
-  max-width: 1.5rem;
 }
 
 .card__title {
@@ -229,14 +231,84 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  gap: 1rem;
+  gap: 1.2rem;
   background-color: hsl(257, 27%, 26%);
 }
 
 .bottom__title {
   color: white;
+  font-size: 2.2rem;
 }
 
+.bottom__button {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+}
+
+.top__footer {
+  display: flex;
+  background-color: hsl(255, 11%, 22%);
+  justify-content: space-between;
+  padding: 3.7rem 9.2rem 3.7rem 9rem;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__logo {
+  margin-right: 9rem;
+}
+
+.column__title {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+.column__option {
+  color: hsl(0, 0%, 75%);
+  font-weight: lighter;
+}
+
+.column__social {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.card__input {
+  position: absolute;
+  top: -50px;
+  width: 80%;
+}
+
+.input__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-image: url(../public/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: hsl(257, 27%, 26%);
+}
+
+.form__input {
+  font-size: 1.2em;
+  padding: 1rem 2rem;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.form__button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  
+}
 
 @media (prefers-color-scheme: light) {
   :root {
