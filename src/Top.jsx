@@ -4,33 +4,21 @@ import Twitter from "./assets/icon-twitter.svg?react";
 import Pinterest from "./assets/icon-pinterest.svg?react";
 import Instagram from "./assets/icon-instagram.svg?react";
 import UrlShortener from "./UrlShortener.jsx";
+import DesktopMenu from "./DesktopMenu.jsx";
+import MobileMenu from "./MobileMenu.jsx";
 
 function Top() {
   return (
     <main className="main__top">
-      <nav className="top__nav">
-        <ul className="nav__left">
-          <Logo />
-
-          <li className="left__item">
-            <a href="#">Features</a>
-          </li>
-          <li className="left__item">
-            <a href="#">Pricing</a>
-          </li>
-          <li className="left__item">
-            <a href="#">Resources</a>
-          </li>
-        </ul>
-        <ul className="nav__right">
-          <li className="right__item">
-            <a href="#">Login</a>
-          </li>
-          <li className="right__item">
-            <button className="item__button">Sign Up</button>
-          </li>
-        </ul>
-      </nav>
+      <header className="top__nav">
+        <Logo className="nav__logo" />
+        <div className="nav__desktop">
+          <DesktopMenu />
+        </div>
+        <div className="nav__mobile">
+          <MobileMenu />
+        </div>
+        </header>
       <div className="top__content">
         <div className="content__left">
           <h1 className="left__title">More than just shorter links</h1>
@@ -128,10 +116,10 @@ function Top() {
           <h5 className="column__option">Contact</h5>
         </div>
         <div className="column__social">
-          <Facebook />
-          <Twitter />
-          <Pinterest />
-          <Instagram />
+          <Facebook className="social__logo" />
+          <Twitter className="social__logo" />
+          <Pinterest className="social__logo" />
+          <Instagram className="social__logo" />
         </div>
       </div>
     </main>

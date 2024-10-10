@@ -10,7 +10,7 @@ const UrlShortener = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('https://api.encurtador.dev/encurtamentos', 
+      const response = await axios.post(CORS_PROXY + 'https://api.encurtador.dev/encurtamentos', 
         { url: data.url },
         { headers: {'Content-Type': 'application/json'} }
       );
