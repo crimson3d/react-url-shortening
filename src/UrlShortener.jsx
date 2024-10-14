@@ -56,7 +56,7 @@ const UrlShortener = () => {
       <div>
         {shortUrls.map((urlObj, index) => (
           <div className='url__result' key={index} style={{ marginTop: '10px' }}>
-            <p className='result__text'>{urlObj.original}</p>
+            <p className='result__text result__text--line'>{urlObj.original}</p>
             <div className='result__right'>
             <p className='result__text'>{urlObj.short}</p>
             <CopyToClipboard text={urlObj.short} onCopy={() => setCopySuccess(index)}>
