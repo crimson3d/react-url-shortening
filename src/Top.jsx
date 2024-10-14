@@ -44,7 +44,7 @@ function Top() {
           <div className="cards__card card1">
             <div className="card__pic">
               <img
-                src="../public/icon-brand-recognition.svg"
+                src="/icon-brand-recognition.svg"
                 alt="brand"
                 className="pic__icon"
               />
@@ -59,7 +59,7 @@ function Top() {
           <div className="cards__card card2">
             <div className="card__pic">
               <img
-                src="../public/icon-detailed-records.svg"
+                src="/icon-detailed-records.svg"
                 alt="records"
                 className="pic__icon"
               />
@@ -74,7 +74,7 @@ function Top() {
           <div className="cards__card card3">
             <div className="card__pic">
               <img
-                src="../public/icon-fully-customizable.svg"
+                src="/icon-fully-customizable.svg"
                 alt="customizable"
                 className="pic__icon"
               />
