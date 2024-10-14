@@ -7,41 +7,62 @@ const UrlShortener = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const [shortUrls, setShortUrls] = useState([]);
   const [copySuccess, setCopySuccess] = useState(null);
+  const CORS_PROXY = 'https://proxy.cors.sh/';
+  const [isLoading, setIsLoading] = useState(false);
+  const [buttonText, setButtonText] = useState('Copy');
+
 
   const onSubmit = async (data) => {
+    setIsLoading(true);
     try {
-      const response = await axios.post(CORS_PROXY + 'https://api.encurtador.dev/encurtamentos', 
+      const response = await axios.post(CORS_PROXY + 'https://api.encurtador.dev/encurtamentos',
         { url: data.url },
         { headers: {'Content-Type': 'application/json'} }
       );
-      setShortUrls([...shortUrls, response.data.urlEncurtada]);
+      setShortUrls([...shortUrls, { original: data.url, short: response.data.urlEncurtada }]);
       reset();
     } catch (error) {
       console.error('Error acortando la URL:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className='card__input'>
       <form className='input__form' onSubmit={handleSubmit(onSubmit)}>
-        <input 
-          className='form__input'
-          type="url" 
-          placeholder="Shorten a link here..." 
-          {...register('url', { required: "Please add a link" })} 
-        />
-        <button className='form__button' type="submit">Shorten It!</button>
+        <div className='form__inputs'>
+          <input 
+            className='inputs__input'
+            type="url" 
+            placeholder="Shorten a link here..." 
+            {...register('url', { required: "Please add a link" })} 
+          />
+          <button className='inputs__button' type="submit" disabled={isLoading}>
+            {isLoading ? 'Shortening...' : 'Shorten It!'}
+          </button>
+        </div>
         {errors.url && <p style={{ color: 'red' }}>{errors.url.message}</p>}
       </form>
       
+      {isLoading && (
+  <div className="loader">
+    <span>.</span>
+    <span>.</span>
+    <span>.</span>
+  </div>
+)}
+      
       <div>
-        {shortUrls.map((url, index) => (
-          <div key={index} style={{ marginTop: '10px' }}>
-            <p>Short URL: {url}</p>
-            <CopyToClipboard text={url} onCopy={() => setCopySuccess(index)}>
-              <button>Copy to Clipboard</button>
+        {shortUrls.map((urlObj, index) => (
+          <div className='url__result' key={index} style={{ marginTop: '10px' }}>
+            <p className='result__text'>{urlObj.original}</p>
+            <div className='result__right'>
+            <p className='result__text'>{urlObj.short}</p>
+            <CopyToClipboard text={urlObj.short} onCopy={() => setCopySuccess(index)}>
+              <button className='result__button'>{copySuccess === index ? 'Copied!' : buttonText}</button>
             </CopyToClipboard>
-            {copySuccess === index && <span style={{color: 'green'}}> Copied!</span>}
+            </div>
           </div>
         ))}
       </div>

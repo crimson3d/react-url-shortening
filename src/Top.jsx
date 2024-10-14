@@ -96,24 +96,24 @@ function Top() {
         <div className="footer__column">
           <h4 className="column__title">Features</h4>
 
-          <h5 className="column__option">Link Shortening</h5>
-          <h5 className="column__option">Branded Links</h5>
-          <h5 className="column__option">Analytics</h5>
+          <a href="#" className="column__option">Link Shortening</a>
+          <a href="#" className="column__option">Branded Links</a>
+          <a href="#" className="column__option">Analytics</a>
         </div>
         <div className="footer__column">
           <h4 className="column__title">Resources</h4>
 
-          <h5 className="column__option">Blog</h5>
-          <h5 className="column__option">Developers</h5>
-          <h5 className="column__option">Support</h5>
+          <a href="#" className="column__option">Blog</a>
+          <a href="#" className="column__option">Developers</a>
+          <a href="#" className="column__option">Support</a>
         </div>
         <div className="footer__column">
           <h4 className="column__title">Company</h4>
 
-          <h5 className="column__option">About</h5>
-          <h5 className="column__option">Our Team</h5>
-          <h5 className="column__option">Careers</h5>
-          <h5 className="column__option">Contact</h5>
+          <a href="#" className="column__option">About</a>
+          <a href="#" className="column__option">Our Team</a>
+          <a href="#" className="column__option">Careers</a>
+          <a href="#" className="column__option">Contact</a>
         </div>
         <div className="column__social">
           <Facebook className="social__logo" />

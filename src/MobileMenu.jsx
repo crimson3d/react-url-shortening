@@ -12,19 +12,19 @@ const MobileMenu = () => {
                     <div className='mobile__mobile'>
                         <ul className="mobile__left">
                             <li className="left__item">
-                                <a href="#">Features</a>
+                                <a className='item__mobile' href="#">Features</a>
                             </li>
                             <li className="left__item">
-                                <a href="#">Pricing</a>
+                                <a className='item__mobile' href="#">Pricing</a>
                             </li>
                             <li className="left__item">
-                                <a href="#">Resources</a>
+                                <a className='item__mobile' href="#">Resources</a>
                             </li>
                         </ul>
                         <hr />
                         <ul className="mobile__right">
                             <li className="right__item">
-                                <a href="#">Login</a>
+                                <a className='item__mobile' href="#">Login</a>
                             </li>
                             <li className="right__item">
                                 <button className="item__button">Sign Up</button>

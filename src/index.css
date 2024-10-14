@@ -22,7 +22,7 @@ ul {
 
 a {
   font-weight: 500;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 
 body {
@@ -30,7 +30,6 @@ body {
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
-  color: #213547;
 }
 
 h1 {
@@ -100,8 +99,6 @@ button:hover {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  padding-left: 2rem;
-  color: hsl(0, 0%, 75%);
 }
 
 .desktop__right {
@@ -110,7 +107,22 @@ button:hover {
   justify-content: center;
   gap: 2rem;
   padding-right: 5rem;
+}
+
+.item__desktop {
   color: hsl(0, 0%, 75%);
+}
+
+.item__desktop:hover {
+  color: hsl(260, 8%, 14%);
+}
+
+.item__mobile {
+  color: white;
+}
+
+.item__mobile:hover {
+  color: hsl(180, 66%, 49%);
 }
 
 .item__button {
@@ -282,6 +294,11 @@ button:hover {
 .column__option {
   color: hsl(0, 0%, 75%);
   font-weight: lighter;
+  font-size: clamp(0.8rem, 0.07vi + 0.78rem, 0.84rem);
+}
+
+.column__option:hover {
+  color: hsl(180, 66%, 49%);
 }
 
 .column__social {
@@ -297,9 +314,9 @@ button:hover {
 
 .input__form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   background-image: url(../public/bg-shorten-desktop.svg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -308,20 +325,78 @@ button:hover {
   background-color: hsl(257, 27%, 26%);
 }
 
-.form__input {
+.form__inputs {
+  display: flex;
+  width: 100%;
+  gap: 2.5rem;
+}
+
+.inputs__input {
   font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
   padding: 1rem 2rem;
   width: 70%;
   border-radius: 10px;
 }
 
-.form__button {
+.inputs__button {
   font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
   font-weight: bold;
   border-radius: 10px;
   padding: 0.8rem 2rem;
+  width: 30%;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.loader span {
+  animation: jump 1s infinite;
+}
+
+.loader span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.url__result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+
+.result__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.result__text {
+  font-size: clamp(0.8rem, 0.07vi + 0.78rem, 0.84rem);
+}
+
+.result__button {
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  font-size: clamp(0.8rem, 0.07vi + 0.78rem, 0.84rem);
+}
 
 @media only screen and (max-width: 1255px) {
   .top__nav {
@@ -365,25 +440,26 @@ button:hover {
     padding: 3.7rem 4.2rem 3.7rem 4rem;
   }
 
-  .form__button {
+  .inputs__button {
     padding: 0.8rem 0.5rem;
   }
 }
 
-@media only screen and (max-width: 900px) {
-  .form__button {
-    font-size: clamp(1rem, 0.19vi + 0.96rem, 1.13rem);
-    padding: 0.8rem 0.1rem;
+@media only screen and (max-width: 939px) {
+  .inputs__button {
+    font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
   }
 }
 
 @media only screen and (max-width: 790px) {
+  h1 {
+    font-size: clamp(2.44rem, 1.67vi + 2.05rem, 3.55rem);
+  }
   .main {
     width: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
-   
   }
 
   .top__nav {
@@ -407,7 +483,6 @@ button:hover {
     width: 95%;
     position: absolute;
     right: 10px;
-    
   }
 
   .mobile__left,
@@ -427,12 +502,16 @@ button:hover {
     flex-direction: column-reverse;
     justify-content: center;
     gap: 3rem;
-    margin-bottom: 7rem;
+    margin-bottom: 10rem;
+  }
+
+  .middle__intro {
+    margin-top: 10rem;
   }
 
   .content__left {
     text-align: center;
-    padding: 0 6rem;
+    padding: 0 2rem;
    }
 
    .left__title {
@@ -462,8 +541,9 @@ button:hover {
   }
 
   .card__pic {
-    top: -40px;
-    left: 190px;
+    top: -1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .cards__card:nth-child(1) {
@@ -480,7 +560,6 @@ button:hover {
     top: auto;
     left: auto;
   }
-  
 
   .top__footer {
     flex-direction: column;
@@ -492,6 +571,36 @@ button:hover {
 
   .footer__logo {
     min-width: 7.3rem;
+  }
+
+  .card__input {
+    position: absolute;
+    top: -85px;
+    width: 90%;
+  }
+
+  .input__form {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .form__inputs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .inputs__input {
+    width: 100%;
+  }
+
+  .inputs__button {
+    font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
+    width: 100%;
+  }
+
+  .bottom__title {
+    font-size: clamp(1.56rem, 0.66vi + 1.41rem, 2rem);
   }
 }
 
