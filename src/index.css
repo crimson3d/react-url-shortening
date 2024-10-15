@@ -16,6 +16,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: hsla(0, 0%, 80%, 0.456);
+}
+
 ul {
   list-style-type: none;
 }
@@ -36,6 +42,7 @@ h1 {
   font-size: clamp(3.05rem, 2.53vi + 2.46rem, 4.73rem);
   line-height: 1.1;
   font-weight: 700;
+  color: hsl(255, 11%, 22%);
 }
 
 button {
@@ -61,6 +68,7 @@ button:hover {
 .main__top {
   display: flex;
   flex-direction: column;
+  height: auto;
 }
 
 .top__nav {
@@ -127,6 +135,8 @@ button:hover {
 
 .item__button {
   padding: 0.4rem 1.1rem;
+  width: 100%;
+  font-size: 18px;
 }
 
 .content__left {
@@ -137,7 +147,7 @@ button:hover {
 .left__text {
   margin-bottom: 2rem;
   font-size: clamp(1rem, 0.19vi + 0.96rem, 1.13rem);
-  color: hsl(0, 0%, 75%);
+  color: hsl(257, 7%, 63%);
 }
 
 .left__button {
@@ -157,6 +167,18 @@ button:hover {
 .middle__cards {
   display: flex;
   gap: 1rem;
+  min-height: 20rem;
+  width: 100%;
+  position: relative;
+}
+
+.middle__cards::after {
+  content: "";
+  display: block;
+  border-top: 1px solid black;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .top__middle {
@@ -165,7 +187,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   gap: 7rem;
-  min-height: 900px;
+  height: auto;
   position: relative;
   background-color: rgba(236, 237, 245);
 }
@@ -176,7 +198,7 @@ button:hover {
   align-items: center;
   text-align: center;
   gap: 1rem;
-  margin-top: 6rem;
+  
 }
 
 .intro__title {
@@ -186,13 +208,6 @@ button:hover {
 .intro__text {
   color: hsl(257, 7%, 63%);
   max-width: 64%;
-}
-
-.middle__cards {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
 }
 
 .cards__card {
@@ -307,8 +322,7 @@ button:hover {
 }
 
 .card__input {
-  position: absolute;
-  top: -50px;
+  margin-top: -180px;
   width: 80%;
 }
 
@@ -333,7 +347,7 @@ button:hover {
 
 .inputs__input {
   font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
-  padding: 1rem 2rem;
+  padding: 1rem;
   width: 70%;
   border-radius: 10px;
 }
@@ -400,6 +414,10 @@ button:hover {
   font-size: clamp(0.8rem, 0.07vi + 0.78rem, 0.84rem);
 }
 
+.result__button.copied {
+  background-color: hsl(257, 27%, 26%);
+}
+
 @media only screen and (max-width: 1255px) {
   .top__nav {
     margin-left: 0;
@@ -445,11 +463,23 @@ button:hover {
   .inputs__button {
     padding: 0.8rem 0.5rem;
   }
+
+  .card__input {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 939px) {
   .inputs__button {
     font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
+  }
+
+  .middle__cards {
+    min-height: 25rem;
+  }
+
+  .card__input {
+    width: 120%;
   }
 }
 
@@ -477,7 +507,7 @@ button:hover {
 
   .mobile__mobile {
     background-color: hsl(257, 27%, 26%);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -485,15 +515,21 @@ button:hover {
     width: 95%;
     position: absolute;
     right: 10px;
+    margin-top: 1rem;
   }
 
   .mobile__left,
   .mobile__right {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     color: white;
-    font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
+  }
+
+  .item__mobile,
+  .item__button {
+    font-weight: bold;
+    font-size: 22px;
   }
   
   .nav__desktop {
@@ -505,10 +541,6 @@ button:hover {
     justify-content: center;
     gap: 3rem;
     margin-bottom: 10rem;
-  }
-
-  .middle__intro {
-    margin-top: 10rem;
   }
 
   .content__left {
@@ -577,8 +609,7 @@ button:hover {
   }
 
   .card__input {
-    position: absolute;
-    top: -85px;
+    margin-top: -110px;
     width: 90%;
   }
 
@@ -600,6 +631,7 @@ button:hover {
   .inputs__button {
     font-size: clamp(1.25rem, 0.38vi + 1.16rem, 1.5rem);
     width: 100%;
+    padding: 0.5rem;
   }
 
   .bottom__title {
@@ -608,27 +640,32 @@ button:hover {
 
   .url__result {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
     align-items: flex-start;
+    padding: 0rem;
+    border-radius: 10px;
   }
 
   .result__right {
     flex-direction: column;
     width: 100%;
     align-items: flex-start;
+    gap: 0rem;
   }
 
   .result__button {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .result__line {
     width: 100%;
   }
 
-  .result__text--line::after {
-    content: "";
-    display: block;
-    border-top: 1px solid black;
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top: 20px;
+  .result__text {
+    padding: 1rem ;
   }
 }
 

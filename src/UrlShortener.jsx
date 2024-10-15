@@ -56,11 +56,16 @@ const UrlShortener = () => {
       <div>
         {shortUrls.map((urlObj, index) => (
           <div className='url__result' key={index} style={{ marginTop: '10px' }}>
-            <p className='result__text result__text--line'>{urlObj.original}</p>
+            <p className='result__text'>{urlObj.original}</p>
+            <hr className='result__line' />
             <div className='result__right'>
-            <p className='result__text'>{urlObj.short}</p>
+            <a className='result__text' href={`https://${urlObj.short}`} target="_blank" rel="noopener noreferrer">
+              {`https://${urlObj.short}`}
+            </a>
             <CopyToClipboard text={urlObj.short} onCopy={() => setCopySuccess(index)}>
-              <button className='result__button'>{copySuccess === index ? 'Copied!' : buttonText}</button>
+            <button className={`result__button ${copySuccess === index ? 'copied' : ''}`}>
+            {copySuccess === index ? 'Copied!' : buttonText}
+            </button>
             </CopyToClipboard>
             </div>
           </div>
