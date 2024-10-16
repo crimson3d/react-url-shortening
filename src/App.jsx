@@ -11,14 +11,14 @@ import DesktopMenu from "./components/DesktopMenu.jsx";
 import MobileMenu from "./components/MobileMenu.jsx";
 
 const Header = () => (
-  <header className="top__nav">
-    <Logo className="nav__logo" />
-    <div className="nav__desktop">
+  <header className="top__nav" role="banner">
+    <Logo className="nav__logo" aria-label="Company Logo" />
+    <nav className="nav__desktop" aria-label="Main Navigation">
       <DesktopMenu />
-    </div>
-    <div className="nav__mobile">
+    </nav>
+    <nav className="nav__mobile" aria-label="Mobile Navigation">
       <MobileMenu />
-    </div>
+    </nav>
   </header>
 );
 
@@ -30,7 +30,7 @@ const Content = () => (
         Build your brand’s recognition and get detailed insights on how your
         links are performing.
       </p>
-      <button className="left__button">Get Started</button>
+      <button className="left__button" tabIndex="0" role="button" aria-pressed="false">Get Started</button>
     </div>
     <div className="content__right"></div>
   </div>
@@ -50,19 +50,19 @@ const MiddleSection = () => (
       {[
         {
           imgSrc: "/icon-brand-recognition.svg",
-          alt: "brand",
+          alt: "Brand Recognition Icon",
           title: "Brand Recognition",
           text: "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
         },
         {
           imgSrc: "/icon-detailed-records.svg",
-          alt: "records",
+          alt: "Detailed Records Icon",
           title: "Detailed Records",
           text: "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
         },
         {
           imgSrc: "/icon-fully-customizable.svg",
-          alt: "customizable",
+          alt: "Fully Customizable Icon",
           title: "Fully Customizable",
           text: "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
         },
@@ -81,7 +81,7 @@ const MiddleSection = () => (
 
 const Footer = () => (
   <div className="top__footer">
-    <Logo fill="white" className="footer__logo" />
+    <Logo fill="white" className="footer__logo" aria-label="Company Logo" />
     {[
       {
         title: "Features",
@@ -106,10 +106,10 @@ const Footer = () => (
       </div>
     ))}
     <div className="column__social">
-      <Facebook className="social__logo" />
-      <Twitter className="social__logo" />
-      <Pinterest className="social__logo" />
-      <Instagram className="social__logo" />
+      <Facebook className="social__logo" aria-label="Facebook" />
+      <Twitter className="social__logo" aria-label="Twitter" />
+      <Pinterest className="social__logo" aria-label="Pinterest" />
+      <Instagram className="social__logo" aria-label="Instagram" />
     </div>
   </div>
 );
@@ -122,7 +122,7 @@ function App() {
       <MiddleSection />
       <div className="top__bottom">
         <h2 className="bottom__title">Boost your links today</h2>
-        <button className="bottom__button">Get Started</button>
+        <button className="bottom__button" tabIndex="0" role="button" aria-pressed="false">Get Started</button>
       </div>
       <Footer />
     </main>
