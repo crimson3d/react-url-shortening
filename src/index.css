@@ -61,15 +61,13 @@ button:hover {
   background-color: hsl(180, 38%, 70%);
 }
 
-.main {
-  width: clamp(320px, 90vw, 1440px);
-}
-
 .main__top {
+  width: clamp(320px, 90vw, 1440px);
   display: flex;
   flex-direction: column;
   height: auto;
 }
+
 
 .top__nav {
   display: flex;
@@ -510,12 +508,6 @@ button:hover {
 @media only screen and (max-width: 790px) {
   h1 {
     font-size: clamp(2.44rem, 1.67vi + 2.05rem, 3.55rem);
-  }
-  .main {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
   }
 
   .top__nav {
