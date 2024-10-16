@@ -48,26 +48,30 @@ const UrlShortener = () => {
       <form className="input__form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form__inputs">
           <div className="inputs__left">
+            <label htmlFor="urlInput" className="sr-only">Shorten a link here...</label>
             <input
+              id="urlInput"
               className={`left__input ${errors.url ? "input__error" : ""}`}
               type="url"
               placeholder="Shorten a link here..."
               {...register("url", { required: "Please add a link" })}
+              aria-invalid={errors.url ? "true" : "false"}
+              aria-describedby="urlError"
             />
             {errors.url && (
-              <p style={{ color: "hsl(0, 87%, 67%)", fontStyle: "italic" }}>
+              <p id="urlError" style={{ color: "hsl(0, 87%, 67%)", fontStyle: "italic" }}>
                 {errors.url.message}
               </p>
             )}
           </div>
-          <button className="inputs__button" type="submit" disabled={isLoading}>
+          <button className="inputs__button" type="submit" disabled={isLoading} aria-busy={isLoading}>
             {isLoading ? "Shortening..." : "Shorten It!"}
           </button>
         </div>
       </form>
 
       {isLoading && (
-        <div className="loader">
+        <div className="loader" aria-live="polite">
           <span>.</span>
           <span>.</span>
           <span>.</span>
@@ -89,6 +93,7 @@ const UrlShortener = () => {
                 href={`https://${urlObj.short}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Shortened URL: ${urlObj.short}`}
               >
                 {`https://${urlObj.short}`}
               </a>
@@ -100,6 +105,7 @@ const UrlShortener = () => {
                   className={`result__button ${
                     copySuccess === index ? "copied" : ""
                   }`}
+                  aria-live="polite"
                 >
                   {copySuccess === index ? "Copied!" : buttonText}
                 </button>
