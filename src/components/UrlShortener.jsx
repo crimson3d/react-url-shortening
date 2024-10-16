@@ -48,7 +48,6 @@ const UrlShortener = () => {
       <form className="input__form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form__inputs">
           <div className="inputs__left">
-            <label htmlFor="urlInput" className="sr-only">Shorten a link here...</label>
             <input
               id="urlInput"
               className={`left__input ${errors.url ? "input__error" : ""}`}
