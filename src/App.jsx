@@ -46,7 +46,7 @@ const MiddleSection = () => (
         statistics dashboard.
       </p>
     </div>
-    <div className="middle__cards ">
+    <div className="middle__cards">
       {[
         {
           imgSrc: "/icon-brand-recognition.svg",
