@@ -10,8 +10,8 @@ const UrlShortener = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const [shortUrls, setShortUrls] = useState(() =>{
-    const savedUrls = localStorage.getItem('shortUrls');
+  const [shortUrls, setShortUrls] = useState(() => {
+    const savedUrls = localStorage.getItem("shortUrls");
     return savedUrls ? JSON.parse(savedUrls) : [];
   });
   const [copySuccess, setCopySuccess] = useState(null);
@@ -20,7 +20,7 @@ const UrlShortener = () => {
   const buttonText = "Copy";
 
   useEffect(() => {
-    localStorage.setItem('shortUrls', JSON.stringify(shortUrls));
+    localStorage.setItem("shortUrls", JSON.stringify(shortUrls));
   }, [shortUrls]);
 
   const onSubmit = async (data) => {

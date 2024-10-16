@@ -1,14 +1,14 @@
-import './App.css'
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/500.css';
+import "./App.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
 import Logo from "./assets/logo.svg?react";
 import Facebook from "./assets/icon-facebook.svg?react";
 import Twitter from "./assets/icon-twitter.svg?react";
 import Pinterest from "./assets/icon-pinterest.svg?react";
 import Instagram from "./assets/icon-instagram.svg?react";
-import UrlShortener from "./UrlShortener.jsx";
-import DesktopMenu from "./DesktopMenu.jsx";
-import MobileMenu from "./MobileMenu.jsx";
+import UrlShortener from "./components/UrlShortener.jsx";
+import DesktopMenu from "./components/DesktopMenu.jsx";
+import MobileMenu from "./components/MobileMenu.jsx";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <div className="nav__mobile">
           <MobileMenu />
         </div>
-        </header>
+      </header>
       <div className="top__content">
         <div className="content__left">
           <h1 className="left__title">More than just shorter links</h1>
@@ -34,7 +34,7 @@ function App() {
         <div className="content__right"></div>
       </div>
       <div className="top__middle">
-      <UrlShortener />
+        <UrlShortener />
         <div className="middle__intro">
           <h2 className="intro__title">Advanced Statistics</h2>
 
@@ -99,24 +99,44 @@ function App() {
         <div className="footer__column">
           <h4 className="column__title">Features</h4>
 
-          <a href="#" className="column__option">Link Shortening</a>
-          <a href="#" className="column__option">Branded Links</a>
-          <a href="#" className="column__option">Analytics</a>
+          <a href="#" className="column__option">
+            Link Shortening
+          </a>
+          <a href="#" className="column__option">
+            Branded Links
+          </a>
+          <a href="#" className="column__option">
+            Analytics
+          </a>
         </div>
         <div className="footer__column">
           <h4 className="column__title">Resources</h4>
 
-          <a href="#" className="column__option">Blog</a>
-          <a href="#" className="column__option">Developers</a>
-          <a href="#" className="column__option">Support</a>
+          <a href="#" className="column__option">
+            Blog
+          </a>
+          <a href="#" className="column__option">
+            Developers
+          </a>
+          <a href="#" className="column__option">
+            Support
+          </a>
         </div>
         <div className="footer__column">
           <h4 className="column__title">Company</h4>
 
-          <a href="#" className="column__option">About</a>
-          <a href="#" className="column__option">Our Team</a>
-          <a href="#" className="column__option">Careers</a>
-          <a href="#" className="column__option">Contact</a>
+          <a href="#" className="column__option">
+            About
+          </a>
+          <a href="#" className="column__option">
+            Our Team
+          </a>
+          <a href="#" className="column__option">
+            Careers
+          </a>
+          <a href="#" className="column__option">
+            Contact
+          </a>
         </div>
         <div className="column__social">
           <Facebook className="social__logo" />
@@ -130,5 +150,3 @@ function App() {
 }
 
 export default App;
-
-
