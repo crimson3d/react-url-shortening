@@ -32,17 +32,19 @@ const UrlShortener = () => {
     <div className='card__input'>
       <form className='input__form' onSubmit={handleSubmit(onSubmit)}>
         <div className='form__inputs'>
+          <div className='inputs__left'>
           <input 
-            className='inputs__input'
+            className={`left__input ${errors.url ? 'input__error' : ''}`}
             type="url" 
             placeholder="Shorten a link here..." 
             {...register('url', { required: "Please add a link" })} 
           />
+          {errors.url && <p style={{ color: 'hsl(0, 87%, 67%)', fontStyle: 'italic' }}>{errors.url.message}</p>}
+          </div>
           <button className='inputs__button' type="submit" disabled={isLoading}>
             {isLoading ? 'Shortening...' : 'Shorten It!'}
           </button>
         </div>
-        {errors.url && <p style={{ color: 'red' }}>{errors.url.message}</p>}
       </form>
       
       {isLoading && (
